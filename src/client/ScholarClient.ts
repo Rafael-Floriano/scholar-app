@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://sua-api.com';
+const API_BASE_URL = 'https://tc03xmvh-5165.brs.devtunnels.ms';
 
 const scholarClient = axios.create({
   baseURL: API_BASE_URL,
@@ -11,7 +11,7 @@ const scholarClient = axios.create({
 
 export const cadastrarUsuario = async (userData: any) => {
   try {
-    const response = await scholarClient.post('/cadastro', userData);
+    const response = await scholarClient.post('/user', userData);
     return response.data;
   } catch (error) {
     console.error('Erro ao cadastrar o usuário:', error);

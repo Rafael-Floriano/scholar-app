@@ -10,7 +10,7 @@ function App() {
     name: '',
     email: '',
     password: '',
-    role: '',
+    role: 'string',
     addresses: [ 
       {
         street: '',
@@ -47,12 +47,12 @@ function App() {
       setUserData((prevUser) => {
         const newAddresses = [...prevUser.addresses];
         newAddresses[addressIndex] = { ...newAddresses[addressIndex], [field]: value };
-        return { ...prevUser, lstAddresses: newAddresses };
+        return { ...prevUser, addresses: newAddresses };
       });
     } else {
       setUserData((prevUser) => ({ ...prevUser, [field]: value }));
     }
-  };
+  };  
 
   const nextPage = (e: FormEvent) => {
     e.preventDefault();
@@ -93,7 +93,7 @@ function App() {
                   placeholder="Forneça uma senha forte"
                   required
                   value={userData.password}
-                  onChange={(e) => handleInputChange(e, 'senha')}
+                  onChange={(e) => handleInputChange(e, 'password')}
                 />
               </Flex>
               <Input type="submit" value="Próxima Página" />
